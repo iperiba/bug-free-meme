@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('game_table');
+});*/
+
+Route::get('/', 'Partida@configuracion_inicio_partida');
+
+Route::post('/', 'Partida@clic_jugador');
