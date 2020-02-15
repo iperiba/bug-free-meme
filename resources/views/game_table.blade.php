@@ -10,9 +10,33 @@
     <div>
         <form method="post" action="/">
             @csrf
-                <button name="boton" type="submit" value="0">-</button>
-                <button name="boton" type="submit" value="1">-</button>
-                <button name="boton" type="submit" value="2">-</button>
+                <button name="boton" type="submit" value="0">
+                    @if (in_array(0, json_decode($posiciones_X)))
+                        X
+                    @elseif (in_array(0, json_decode($posiciones_O)))
+                        O
+                    @else
+                        -
+                    @endif
+                </button>
+                <button name="boton" type="submit" value="1">
+                    @if (in_array(1, json_decode($posiciones_X)))
+                    X
+                    @elseif (in_array(1, json_decode($posiciones_O)))
+                        O
+                    @else
+                        -
+                    @endif
+                </button>
+                <button name="boton" type="submit" value="2">
+                    @if (in_array(2, json_decode($posiciones_X)))
+                    X
+                    @elseif (in_array(2, json_decode($posiciones_O)))
+                        O
+                    @else
+                        -
+                    @endif
+                </button>
             <br/>
                 <button name="boton" type="submit" value="3">-</button>
                 <button name="boton" type="submit" value="4">-</button>
@@ -26,5 +50,8 @@
             <input class="especial" name="reset" type="submit" value="Reiniciar partida">
         </form>
     </div>
+
+    {{ $posiciones_X }}
+    {{ $posiciones_O }}
 </body>
 </html>

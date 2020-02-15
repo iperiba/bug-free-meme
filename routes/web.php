@@ -15,6 +15,6 @@
     return view('game_table');
 });*/
 
-Route::get('/', 'Partida@configuracion_inicio_partida');
+Route::get('/', 'PartidaController@configuracion_inicio_partida');
 
-Route::post('/', 'Partida@clic_jugador');
+Route::post('/', 'PartidaController@clic_jugador');
