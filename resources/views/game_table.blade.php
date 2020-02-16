@@ -10,48 +10,32 @@
     <div>
         <form method="post" action="/">
             @csrf
-                <button name="boton" type="submit" value="0">
-                    @if (in_array(0, json_decode($posiciones_X)))
-                        X
-                    @elseif (in_array(0, json_decode($posiciones_O)))
-                        O
+            @for ($i = 0; $i < 9; $i++)
+                <button name="boton" type="submit" value="{{$i}}"
+                @if (isset($posiciones_X) && isset($posiciones_O))
+                    @if (in_array($i, json_decode($posiciones_X)) || in_array($i, json_decode($posiciones_O)))
+                        disabled
+                    @endif
+                @endif
+                >
+                    @if (isset($posiciones_X) && isset($posiciones_O))
+                        @if (in_array($i, json_decode($posiciones_X)))
+                            X
+                        @elseif (in_array($i, json_decode($posiciones_O)))
+                            O
+                        @else
+                            -
+                        @endif
                     @else
                         -
                     @endif
                 </button>
-                <button name="boton" type="submit" value="1">
-                    @if (in_array(1, json_decode($posiciones_X)))
-                    X
-                    @elseif (in_array(1, json_decode($posiciones_O)))
-                        O
-                    @else
-                        -
-                    @endif
-                </button>
-                <button name="boton" type="submit" value="2">
-                    @if (in_array(2, json_decode($posiciones_X)))
-                    X
-                    @elseif (in_array(2, json_decode($posiciones_O)))
-                        O
-                    @else
-                        -
-                    @endif
-                </button>
-            <br/>
-                <button name="boton" type="submit" value="3">-</button>
-                <button name="boton" type="submit" value="4">-</button>
-                <button name="boton" type="submit" value="5">-</button>
-            <br/>
-                <button name="boton" type="submit" value="6">-</button>
-                <button name="boton" type="submit" value="7">-</button>
-                <button name="boton" type="submit" value="8">-</button>
-            <br/>
-            <br/>
+                @if ($i == 2 || $i == 5 || $i == 8)
+                    <br>
+                @endif
+            @endfor
             <input class="especial" name="reset" type="submit" value="Reiniciar partida">
         </form>
     </div>
-
-    {{ $posiciones_X }}
-    {{ $posiciones_O }}
 </body>
 </html>
