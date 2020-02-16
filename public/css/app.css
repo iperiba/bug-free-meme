@@ -1,0 +1,25 @@
+.area_ganador {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.area_formulario {
+  padding-top: 25px;
+  padding-bottom: 40px;
+}
+
+.area_formulario form {
+  text-align: center;
+}
+
+.area_formulario form button {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 4px;
+}
+
+.area_botonReiniciar {
+  text-align: center;
+}
+

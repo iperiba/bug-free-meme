@@ -4,19 +4,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Tres en raya</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1>Bienvenido al juego del tres en raya</h1>
+    <div class="area_ganador alert alert-primary" role="alert">
+        <h2>
+            @if (!empty($jugador_ganador))
+                Enhorabuena, jugador {{ strtoupper($jugador_ganador) }}, ¡has ganado!</div>
+            @else
+                ¡Que comience el juego!
+            @endif
+        </h2>
+    </div>
 
-    @if (!empty($jugador_ganador))
-        Enhorabuena, jugador {{ $jugador_ganador }}, ¡has ganado!
-    @endif
-
-    <div>
+    <div class="area_formulario">
         <form method="post" action="/">
             @csrf
             @for ($i = 0; $i < 9; $i++)
-                <button name="boton" type="submit" value="{{$i}}"
+                <button name="boton" type="submit" value="{{$i}}" class="btn btn-primary"
                 @if (isset($posiciones_X) && isset($posiciones_O))
                     @if (in_array($i, json_decode($posiciones_X)) || in_array($i, json_decode($posiciones_O)) || !empty($jugador_ganador))
                         disabled
@@ -40,9 +46,10 @@
                 @endif
             @endfor
         </form>
-
+    </div>
+    <div class="area_botonReiniciar">
         <form method="get" action="/">
-            <button type="submit">Reiniciar partida</button>
+            <button type="submit" class="btn btn-outline-info">Reiniciar partida</button>
         </form>
     </div>
 </body>
