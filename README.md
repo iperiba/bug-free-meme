@@ -23,7 +23,8 @@ NameVirtualHost *:80<br>
 <\/VirtualHost><br>  
 Y C:\Windows\System32\drivers\etc\hosts<br>
 Añadiendo al final del documento esta línea: <br>
-127.0.0.3 tres_en_raya.local<br>
+127.0.0.3 tres_en_raya.local<br><br>
+3. Creación de la base de datos<br><br>
 
 
 
