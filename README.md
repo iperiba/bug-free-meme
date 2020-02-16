@@ -18,7 +18,7 @@ NameVirtualHost *:80<br>
     ServerName localhost<br>
 <\/VirtualHost><br>
 <VirtualHost *:80><br>
-    DocumentRoot "C:/xampp02/htdocs/tres_en_raya/public/"<br>
+    DocumentRoot "C:/xampp/htdocs/tres_en_raya/public/"<br>
     ServerName tres_en_raya.local<br>
 <\/VirtualHost><br>  
 Y C:\Windows\System32\drivers\etc\hosts<br>
