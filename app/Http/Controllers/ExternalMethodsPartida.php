@@ -5,7 +5,7 @@ use App\Partida;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class ExternalMethodsPartida extends Controller
+class ExternalMethodsPartida
 {
     public static function asignar_id_partida(Request $request) {
         $last_id_partida = DB::table('partidas')->max('numero_partida');

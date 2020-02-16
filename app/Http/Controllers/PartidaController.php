@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Partida;
 use App\Http\Controllers\ExternalMethodsPartida;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class PartidaController extends Controller
