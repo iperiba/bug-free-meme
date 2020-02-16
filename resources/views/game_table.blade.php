@@ -7,13 +7,18 @@
 </head>
 <body>
     <h1>Bienvenido al juego del tres en raya</h1>
+
+    @if (!empty($jugador_ganador))
+        Enhorabuena, jugador {{ $jugador_ganador }}, ¡has ganado!
+    @endif
+
     <div>
         <form method="post" action="/">
             @csrf
             @for ($i = 0; $i < 9; $i++)
                 <button name="boton" type="submit" value="{{$i}}"
                 @if (isset($posiciones_X) && isset($posiciones_O))
-                    @if (in_array($i, json_decode($posiciones_X)) || in_array($i, json_decode($posiciones_O)))
+                    @if (in_array($i, json_decode($posiciones_X)) || in_array($i, json_decode($posiciones_O)) || !empty($jugador_ganador))
                         disabled
                     @endif
                 @endif
@@ -34,7 +39,10 @@
                     <br>
                 @endif
             @endfor
-            <input class="especial" name="reset" type="submit" value="Reiniciar partida">
+        </form>
+
+        <form method="get" action="/">
+            <button type="submit">Reiniciar partida</button>
         </form>
     </div>
 </body>
