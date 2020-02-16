@@ -8,6 +8,10 @@ Composer version 1.8.5<br>
 Node.js v12.16.0.<br><br>
 
 <b>Instalación:</b><br>
-1. Descarga 
+1. git clone https://github.com/iperiba/tres_en_raya<br>
+2. Para evitar problemas con las rutas hacia la carpeta public de Laravel, en mi caso, empleando XAMPP, he modificado los archivos de Apache:<br>
+
+
+
 
 
