@@ -25,6 +25,20 @@ Y C:\Windows\System32\drivers\etc\hosts<br>
 Añadiendo al final del documento esta línea: <br>
 127.0.0.3 tres_en_raya.local<br><br>
 3. Creación de la base de datos<br><br>
+4. En el root del proyecto, a través del terminal, ejecutar el siguiente comando: composer install<br><br>
+5. Ejecutar también: npm install<br><br>
+6. Crear una copia del archivo .env.example que se descarga por defecto: cp .env.example .env<br><br>
+7. En el nuevo archivo .env creado, modificar el apartado en el que se configura la conexión con la base de datos. En mi caso, queda así:<br>
+DB_CONNECTION=mysql<br>
+DB_HOST=127.0.0.1<br>
+DB_PORT=3306<br>
+DB_DATABASE=tres_en_raya<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=<br><br>
+
+
+
+
 
 
 
